@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student managment system</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="head">
+        <i class="fa-solid fa-graduation-cap" id="logo"></i>
+       <p id="a">student Managemnet System</p>
+    </div>
+    <div class="midile">
+    <div class="sidebar">
+        <span id="dashboard">
+            <i id="side_logo" class="fa-solid fa-house"></i>
+            <p id=slid>Dashboard</p>
+        </span>
+        <span id="students">
+            <i id="side_logo" class="fa-solid fa-users"></i>
+            <p id=slid>Students</p>
+        </span>
+        <span id="marks">
+            <i id="side_logo" class="fa-solid fa-file-lines"></i>
+            <p id=slid>Marks</p>
+        </span>
+        <span id="attendance">
+            <i id="side_logo" class="fa-solid fa-calendar-check"></i>
+            <p id=slid>Attendance</p>
+        </span>
+        <span id="Reports">
+            <i id="side_logo" class="fa-solid fa-chart-column"></i>
+            <p id=slid>About</p>
+        </span>
+
+    </div>
+    <!-- body -->
+    <div class="main_dashboard">
+        <h1>Dashboard</h1>
+        <p id="wellcome">Welcome to student Management System</p>
+        <div class="boxes">
+            <div id="box1">
+                <span id="image1">    
+                    <i id="all" class="fa-solid fa-users"></i>
+                </span>
+                <p id="data">Total Students</p>
+                <span id="total_student1">00</span>
+            </div>
+            <div id="box2">
+                <span id="image2">    
+                    <i id="all"class="fa-solid fa-file-lines"></i>
+                </span>
+                <p id="data">Total Marks Records</p>
+                <span id="total_student2">00</span>
+            </div>
+            <div id="box3">
+                <span id="image3">    
+                    <i id="all"  class="fa-solid fa-calendar-check"></i>
+                </span>
+                <p id="data">Present Today</p>
+                <span id="total_student3">00</span>
+            </div>
+            <div id="box4">
+                <span id="image4">    
+                    <i id="all" class="fa-solid fa-calendar-xmark"></i>
+                </span>
+                <p id="data">Absent Today</p>
+                <span id="total_student4">00</span>
+            </div>
+        </div>
+        <div class="downbox">
+          <div class="resent_students">
+            <div class="images">
+           <img class="iot1" src="{{ url_for('static',filename='sharif0.jpeg')}}">
+            <img class="iot1" src="{{ url_for('static',filename='sharif1.webp')}}">
+             <img class="iot1" src="{{ url_for('static',filename='sharif2.jpeg')}}">
+              <img class="iot1" src="{{ url_for('static',filename='sharif3.jpg')}}">
+              <!-- //duplicate -->
+              <img class="iot1" src="{{ url_for('static',filename='sharif0.jpeg')}}">
+            <img class="iot1" src="{{ url_for('static',filename='sharif1.webp')}}">
+             <img class="iot1" src="{{ url_for('static',filename='sharif2.jpeg')}}">
+              <img class="iot1" src="{{ url_for('static',filename='sharif3.jpg')}}">
+              </div>
+          </div>
+    <div class="book">
+        <img id="p" src="{{ url_for('static',filename='sharif.png')}}" height="800px" width="800px">
+        <h2 id="book_text">WELLCOME TO</h2>
+        <h2 id="book_text2">STUDENT MANAGEMENT SYSTEM</h2>
+        <p id="work">Manage students, marks , attendence and more all in one place</p>
+    </div>
+    </div>
+    </div>
+  
+    <div class="student_dashboard">
+        <div class="student_add">
+                    <i id="a0" class="fa-solid fa-xmark"></i>
+                    <input id="a1" type="text" placeholder="Enter name :">
+                   
+                    <input id="a2" type="number" placeholder="Enter Roll Number :">
+                     
+                  <input id="a3" type="text" placeholder="Enter Branch:">
+                 
+                  <input id="a4" type="number" placeholder="Enter year of studing:">
+                  
+                  <input id="a5" type="number" placeholder="Enter phone number:">
+                  
+            <button id="done">Done</button>
+            <button id="clear1">clear</button>
+
+
+        </div>
+        <div id="student_bar">
+            
+            <div class="invalid"></div>
+            <i id="m" class="fa-solid fa-users"></i>
+            <h2 id="r">Students</h2>
+            <p id="child">Manage all student informetion</p>
+            <button id="add">
+                <i id="plux" class="fa-solid fa-plus"></i>
+                <p id="add_student">Add student</p>
+
+            </button>
+
+        </div>
+        <div class="student_box">
+            
+            <div class="nothing">
+                
+            <input id="search" type="number" placeholder="Search by name or Roll number">
+             <button id="add1">
+                <i id="plux" class="fa-solid fa-search"></i>
+                <p id="add_student">Search</p>
+
+            </button>
+            </div>
+            
+            <div class="hanif">
+                
+              <div id="row">
+                
+                <span class="colum">Name</span>
+                <span class="colum">Rollnumber</span>
+                <span class="colum">Branch</span>
+                <span class="colum">Year</span>
+                <span class="colum">PHone number</span>
+               
+              </div>
+        </div>
+        </div>
+        
+    </div> 
+    <!-- marks part -->
+      <div class="marks_dash">
+        <div class="stack">
+             <div class="invalid1"></div>
+            <p id="pop">ADD STUENET MARKS</p>
+            <i id="a01" class="fa-solid fa-xmark"></i>
+                   <input id="b6" type="number" placeholder="Enter student Roll number:">
+                    <input id="b1" type="number" placeholder="Enter Pysice marks:">
+                   
+                    <input id="b2" type="number" placeholder="Enter chemistry Number :">
+                     
+                  <input id="b3" type="number" placeholder="Enter english marks:">
+                 
+                  <input id="b4" type="number" placeholder="Enter social marks:">
+                  
+                  <input id="b5" type="number" placeholder="Enter python marks:">
+                  
+            <button id="bob">Done</button>
+            
+
+        </div>
+           
+        <div id="student_bar1">
+              <div class="invalid3"></div>
+            <i id="side_logo" class="fa-solid fa-file-lines"></i>
+            <h2 id="r">Marks</h2>
+            <p id="child">Manage all student dessunse</p>
+            <button id="add3">
+                <i id="plux" class="fa-solid fa-plus"></i>
+                <p id="add_student">Add Marks</p>
+
+            </button>
+            </div>
+             <div class="part2">
+                
+            <div class="marks_box1">
+                <div class="marks_search">
+                    <input  id="zaid" type="number" placeholder="Search by name or Roll number">
+                    <button id="markss">Search</button>
+                    <button id="delete1">DELETE</button>
+
+                </div>
+                <!-- container -->
+                 <div class="marks_data">
+                    <div class="uwise">
+                        <div id="marks_row">
+                            <span id="e">Python</span>
+                             <span id="e">Chemistry</span>
+                              <span id="e">English</span>
+                               <span id="e">social</span>
+                                <span id="e">Pysice</span>
+                        </div>
+                        <hr>
+                        <div id="marks_colum">
+                            <span id="w">00</span>
+                             <span id="m2">00</span>
+                              <span id="z">00</span>
+                               <span id="v">00</span>
+                                <span id="l">00</span>
+                        </div>
+                    </div>
+                    <div class="uwise2">
+                        <div id="result">
+                            <span id="e">Total</span>
+                             <span id="e">Percentage</span>
+                              <span id="e">Grade</span>
+                               <span id="e">Result</span>
+
+                        </div>
+                        <hr>
+                        <div id="marks_colum1">
+                            <span id="w1">00</span>
+                             <span id="m1">00</span>
+                              <span id="z1">00</span>
+                               <span id="v1">00</span>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- subject analaysice -->
+                 <h3 id="mp">Subject Analysis</h3>
+                 <div class="uwise3">
+                        <div id="resultjio">
+                            <span id="e">Roll Number</span>
+                             <span id="e">Total</span>
+                              <span id="e">Pecentage</span>
+                               <span id="e">Result</span>
+
+                        </div>
+
+                    </div>
+             
+                     </div>
+            
+            <div class="resultcard">
+                <h2 id="jan">Result Card</h2>
+            <table>
+                <h5>Name :<span id="name_a">xxxx</span></h5>
+                <h5>ROll No:<span id="roll_b">xxxx</span></h5>
+            </table>
+            <div class="sameer">
+
+            </div>
+            <table>
+            <span id="xc">Result:</span>
+            <span id="ys">NULL</span>
+            </table>
+            </div>
+
+     
+     
+    </div>
+    
+</div>
+<!-- attendence -->
+    <div class="king">
+         <div class="student_add8">
+                    <i id="a09" class="fa-solid fa-xmark"></i>
+                    <input id="a1t" type="number" placeholder="Enter Roll number :">
+                   
+                    <input id="a2t" type="number" placeholder="prsent days :">
+                     
+                  <input id="a3t" type="number" placeholder="working days:">
+                  
+            <button id="donex">Done</button>
+            <button id="clear18">clear</button>
+
+
+        </div>
+        <div id="student_bar">
+            
+            <div class="invalidpro"></div>
+            <i id="m" class="fa-solid fa-users"></i>
+            <h2 id="r">Welcome Back, Admin</h2>
+            <p id="child6">Track student attendence </p>
+            <button id="add20">
+                <i id="plux" class="fa-solid fa-plus"></i>
+                <p id="add_student">Add student</p>
+
+            </button>
+
+        </div>
+
+
+    <div class="boxes1">
+            <div id="box1">
+                <span id="image1">    
+                    <i id="all" class="fa-solid fa-users"></i>
+                </span>
+                <p id="data">Total Students</p>
+                <span id="total_student10">00</span>
+            </div>
+            <div id="box2">
+                <span id="image2">    
+                    <i id="all"class="fa-solid fa-file-lines"></i>
+                </span>
+                <p id="data">Overall Attendence</p>
+                <span id="total_student11">00</span>
+            </div>
+            <div id="box3">
+                <span id="image3">    
+                    <i id="all"  class="fa-solid fa-calendar-check"></i>
+                </span>
+                <p id="data">Present Today</p>
+                <span id="total_student22">00</span>
+            </div>
+            <div id="box4">
+                <span id="image4">    
+                    <i id="all" class="fa-solid fa-calendar-xmark"></i>
+                </span>
+                <p id="data">Absent Today</p>
+                <span id="total_student33">00</span>
+            </div>
+        </div>
+        <div class="marks_search8">
+                    <h3>student attendece</h3>
+                    <input  id="zaid7" type="number" placeholder="Search by name or Roll number">
+                    <button id="markss1">Search</button>
+                    <button id="delete10">DELETE</button>
+
+                </div>
+        <div class="attendence_data">
+              <div class="kk">
+              <div id="rownew">
+                <span class="colum">Name</span>
+                <span class="colum">Rollnumber</span>
+                <span class="colum">Branch</span>
+                
+               
+              </div>
+              </div>
+              <div class="kk1">
+              <div class="rownew1">
+                <span class="colum">Rollnumber</span>
+                <span class="colum">present days</span>
+                <span class="colum">Absent days</span>
+                <span class="colum">Attendance</span>
+
+              </div>
+              </div>
+             
+        </div>
+    </div>
+    <!-- //about -->
+      <div class="informetion">
+        <!-- <div class="about_page"> -->
+
+    <div class="about_title">
+        <h1 id="h1p">About Student Management System</h1>
+    </div>
+
+    <div class="about_content">
+
+        <section>
+            <h2 class="chup">Introduction</h2>
+            <pre class="matter">
+1)The Student Management System is a web-based application.
+2)It is designed to manage student information in an organized way.
+3)The system provides a simple and user-friendly interface.
+4)It helps to store student details digitally.
+5)Student information can be added, searched, updated, and deleted.
+6)The system also provides separate sections for marks and attendance.
+7)It reduces the need for maintaining student records manually.
+8)The application can store student information such as name and roll number.
+9)It also stores branch, year, and phone number.
+10)The system makes student information easier to access.
+11)It provides a central place to manage different student records.
+12)The project is developed using frontend and backend technologies.
+13)HTML and CSS are used to create the webpage.
+14)JavaScript is used to provide interactive functionality.
+15)Python and Flask are used for the backend.
+16)Excel files are used to store the project data.
+            </pre>
+        </section>
+
+        <section>
+            <h2 class="chup">Purpose of the Project</h2>
+            <pre class="matter">
+1)The main purpose of this project is to simplify student record management.
+2)Manual record management can take more time.
+3)Searching information manually can also be difficult.
+4)This system provides a faster way to find student information.
+5)It helps to reduce repetitive manual work.
+6)Student details can be stored in an organized format.
+7)The system allows users to search students using their roll number.
+8)It also allows users to add new student records.
+9)Existing student information can be updated when required.
+10)Unwanted records can be deleted from the system.
+11)Marks can be stored separately from student information.
+12)Attendance information can also be maintained separately.
+13)The system can perform marks calculations automatically.
+14)It can calculate total marks and percentage.
+15)It can also display the grade and result.
+16)Therefore, the project makes student management easier.
+            </pre>
+        </section>
+
+        <section>
+            <h2 class="chup">Student Management</h2>
+            <pre class="matter">
+1)The Student Management section is used to manage student details.
+2)Users can add a new student to the system.
+3)The student form contains basic information.
+4)The information includes the student's name.
+5)It also includes the student's roll number.
+6)The branch of the student can be stored.
+7)The year of study can also be stored.
+8)The phone number can be stored in the student record.
+9)All these details are stored in the Excel file.
+10)Users can search for a particular student.
+11)The search can be performed using the roll number.
+12)The system checks the stored student records.
+13)If the student is found, the information can be displayed.
+14)If the student is not found, a suitable message is displayed.
+15)Users can also update student information.
+16)Student records can be deleted when they are no longer required.
+17)This makes student information easier to maintain.
+18)It also keeps the student records organized.
+            </pre>
+        </section>
+
+        <section>
+            <h2 class="chup">Marks Management</h2>
+            <pre class="matter">
+1)The Marks Management section is used to manage student marks.
+2)Marks can be entered for individual students.
+3)The student can be identified using the roll number.
+4)Different subjects can be stored in the marks record.
+5)The system stores the marks for each subject.
+6)The total marks are calculated automatically.
+7)The percentage can also be calculated automatically.
+8)The system can determine the student's grade.
+9)The result can be displayed as Pass or Fail.
+10)Users can search marks using the student's roll number.
+11)The searched marks can be displayed on the webpage.
+12)This reduces the need to calculate marks manually.
+13)It also makes the marks section easier to use.
+14)The system can display a result card.
+15)The result card contains important academic information.
+16)Subject analysis can also be displayed.
+17)This can include highest and lowest marks.
+18)The marks section keeps academic information organized.
+            </pre>
+        </section>
+
+        <section>
+            <h2 class="chup">Attendance Management</h2>
+            <pre class="matter">
+1)The Attendance Management section is used to maintain attendance.
+2)Attendance information can be stored for each student.
+3)The student can be identified using the roll number.
+4)The number of present days can be entered.
+5)The number of working days can also be entered.
+6)The system can calculate the absent days.
+7)It can also calculate the overall attendance percentage.
+8)Attendance information can be searched when required.
+9)The system displays the attendance details clearly.
+10)Users can quickly check a student's attendance.
+11)This reduces manual attendance calculations.
+12)It also keeps attendance records organized.
+13)Attendance information can be maintained separately from marks.
+14)This makes the system easier to manage.
+15)The attendance section is useful for monitoring student attendance.
+            </pre>
+        </section>
+
+        <section>
+            <h2 class="chup">Technologies Used</h2>
+            <pre class="matter">
+1)HTML is used to create the structure of the website.
+2)CSS is used to design and style the webpage.
+3)JavaScript is used to make the website interactive.
+4)JavaScript handles buttons, forms, searches, and page interactions.
+5)Python is used for backend programming.
+6)Flask is used as the Python web framework.
+7)Flask connects the frontend with the backend.
+8)The frontend sends requests to the Flask server.
+9)Flask processes these requests using Python.
+10)Excel is used as the data storage method.
+11)The OpenPyXL library is used to work with Excel files.
+12)Different Excel files can be used for different types of data.
+13)VS Code can be used as the development environment.
+14)Git can be used to track changes in the project.
+            </pre>
+        </section>
+
+        <section>
+            <h2 class="chup">System Working</h2>
+            <p class="matte">
+             The Student Management System works by connecting the frontend with the Python Flask backend. The user can interact with different pages such as Students, Marks, Attendance, and About. When the user enters student information, the data is sent from the website to the Flask backend. The backend processes the information and stores it in Excel files. When the user searches for a student, the backend reads the required data from Excel and sends the result back to the website. This makes the system simple and easy to use.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="chup">Advantages</h2>
+            <p class="matte">
+              The Student Management System provides many advantages for managing student information. It reduces the need for maintaining records manually and makes searching for student details easier. Student marks and attendance can be stored and accessed whenever required. The system can also calculate total marks, percentage, grade, and result automatically. It saves time and reduces common mistakes while entering or calculating student information. The simple web interface also makes the system easy to understand and use.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="chup">Future Scope</h2>
+            <p class="matte">
+              The Student Management System can be improved with many additional features in the future. A database such as MySQL or MongoDB can be used instead of Excel for storing large amounts of data. Login and authentication can be added to provide secure access to the system. The system can also include student profile photos, detailed reports, charts, notifications, and downloadable report cards. A mobile application can also be developed so that students and teachers can access the system from their phones. These improvements can make the project more powerful and suitable for real-world use.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="chup">Conclusion</h2>
+            <p class="matte">
+               The Student Management System is a useful web-based application developed to make the management of student information easier and more organized. It provides different features for managing student details, marks, and attendance in one place. The system reduces manual work and makes searching and managing records faster and more convenient. By using HTML, CSS, JavaScript, Python Flask, and Excel, the project demonstrates how different technologies can work together to create a practical application. This project also provides a good foundation for adding advanced features and developing a complete student management system in the future.
+            </p>
+        </section>
+
+    <!-- </div> -->
+
+</div>
+      </div>
+    </div>
+    
+        
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
